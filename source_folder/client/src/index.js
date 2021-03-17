@@ -1,12 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import reportWebVitals from "./reportWebVitals";
-import Amplify from "aws-amplify";
+import Amplify, { navBar } from "aws-amplify";
 import awsExports from "./aws-exports";
 import config from "./config";
-import Register from "./components/auth/Register";
+import App from "./App";
 Amplify.configure(awsExports);
+
 
 Amplify.configure({
   Auth: {
@@ -19,13 +18,9 @@ Amplify.configure({
 
 ReactDOM.render(
   <div>
-    <Register />
+    <App/>
   </div>,
 
   document.getElementById("root")
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

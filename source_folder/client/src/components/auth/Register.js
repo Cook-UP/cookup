@@ -80,7 +80,7 @@ class Register extends Component {
     /*
      *    Title: Module 1 User flows configuration
      *    Author: Amazon
-     *    Date: 2020
+     *    Date: 2021
      *    Availability: https://serverless-idm.awssecworkshops.com/01-user-auth/
      */
   }
