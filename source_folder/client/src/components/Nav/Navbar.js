@@ -6,6 +6,7 @@ import {
   Nav,
   NavbarContainer,
   NavLogo,
+
   HambugerMenuIcon,
   NavMenu,
   NavItem,
@@ -86,14 +87,7 @@ function Navbar() {
     </>
   );
 }
-/*
-     *    Title: react-website-styled-components-v1
-     *    Author: briancodex
-     *    Date: 2021
-     *    Availability: https://github.com/briancodex/react-website-styled-components-v1]
-     */
-
+// Cition 
+// briancodex (2021) Recoil [https://github.com/briancodex/react-website-styled-components-v1]
 export default Navbar;
-
-
 

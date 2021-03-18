@@ -49,7 +49,7 @@ class Register extends Component {
 
         validationData: [],
       };
-
+      this.props.history.push("/welcome");
       const data = await Auth.signUp(params);
       console.log(data);
       this.setState({ stage: 1 });
@@ -88,6 +88,7 @@ class Register extends Component {
   render() {
     return (
       <div>
+        {/* Form to take in User input and create a new account */}
         <section className="section auth">
           <div className="container">
             <h1>Register Account</h1>

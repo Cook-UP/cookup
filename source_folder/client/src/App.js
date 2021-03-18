@@ -5,6 +5,7 @@ import GlobalStyle from './globalStyles';
 import Navbar from "./components/Nav/Navbar";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
+import Welcome from "./components/auth/Welcome";
 import Home from "./pages/Home";
 import About from "./pages/AboutUs";
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
                <Route exact path="/login" component={Login} /> 
                <Route exact path="/" component={Home} /> 
                <Route exact path="/aboutUs" component={About} /> 
+               <Route exact path="/welcome" component={Welcome} />
             </Switch>
           </div>
         </Router>

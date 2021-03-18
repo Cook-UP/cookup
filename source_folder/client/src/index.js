@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Amplify, { navBar } from "aws-amplify";
+import Amplify from "aws-amplify";
 import awsExports from "./aws-exports";
 import config from "./config";
 import App from "./App";

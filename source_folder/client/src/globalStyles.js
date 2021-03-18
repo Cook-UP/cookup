@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import Logo from "./images/CookupLogo.png";
+
 
 const GlobalStyle = createGlobalStyle`
   * {
