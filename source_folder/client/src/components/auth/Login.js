@@ -8,6 +8,7 @@ class Login extends Component {
     this.state = {
       username: "",
       password: "",
+      email:"",
       errors: {
         cognito: null,
         blankfield: false
@@ -37,9 +38,12 @@ class Login extends Component {
     // AWS Cognito integration here
     try {
       const user = await Auth.signIn(this.state.username, this.state.password);
+      this.state.email = this.state.username;
+      console.log(this.state.email);
+      console.log(this.state.username);
       console.log(user);
-      // this.props.auth.setAuthStatus(true);
-      // this.props.auth.setUser(user);
+      this.props.auth.setAuthStatus(true);
+      this.props.auth.setUser(user);
       this.props.history.push("/");
     }catch(error) {
       alert("Invaild Login Credentials username or password is incorrect try againc")

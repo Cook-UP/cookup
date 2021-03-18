@@ -8,7 +8,7 @@ class Register extends Component {
     this.state = {
       givenName: "" /*{given name is the same a firstName */,
       familyName: "" /*{family name is the same a lastName */,
-      username: "Hello",
+      username: "",
       userType: "",
       email: "",
       password: "",
@@ -48,8 +48,9 @@ class Register extends Component {
         },
 
         validationData: [],
+       
       };
-      this.props.history.push("/welcome");
+      
       const data = await Auth.signUp(params);
       console.log(data);
       this.setState({ stage: 1 });
@@ -57,6 +58,7 @@ class Register extends Component {
       if (this.state.password !== this.state.confirmpassword) {
         alert("Error Passwords are not identical ");
       }
+      this.props.history.push("/welcome");
     } catch (err) {
       if (err === "No userPool") {
         // User pool not defined in Amplify config file

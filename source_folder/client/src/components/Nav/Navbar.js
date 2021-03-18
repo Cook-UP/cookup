@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
 import { Button } from '../../globalStyles';
+import { Auth } from "aws-amplify";
 import {
   Nav,
   NavbarContainer,
@@ -16,10 +17,20 @@ import {
   LogoImg,
 } from './Navbar.elements';
 
-function Navbar() {
+function Navbar(props) {
+  async function handleSignOut() {
+    try {
+        await Auth.signOut();
+        props.auth.setAuthStatus(false);
+        props.auth.setUser(null);
+    } catch (error) {
+        console.log('error signing out: ', error);
+    }
+}
+
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
-
+  console.log(props.auth.userIsAuthenticated);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
@@ -39,6 +50,7 @@ function Navbar() {
 
   return (
     <>
+     {!props.auth.userIsAuthenticated && (
       <IconContext.Provider value={{ color: '#fff' }}>
         <Nav>
           <NavbarContainer>
@@ -61,6 +73,19 @@ function Navbar() {
                  About Us 
                 </NavLinks>
               </NavItem>
+              
+              {props.auth.userIsAuthenticated && props.auth.user && (
+               <NavItem>
+               <NavLinks to='/aboutUs' onClick={closeMobileMenu}>
+                <p>
+                  Hello 
+                  {/* {props.auth.user.username} */}
+                </p>
+                </NavLinks>
+               </NavItem>
+                
+              )}
+              
               <NavItem>
                 <NavLinks to='/login' onClick={closeMobileMenu}>
                   Sign In 
@@ -83,8 +108,66 @@ function Navbar() {
           </NavbarContainer>
         </Nav>
       </IconContext.Provider>
+     )}
+{/* Displays if the user is signed in */}
+{props.auth.userIsAuthenticated && (
+      <IconContext.Provider value={{ color: '#fff' }}>
+        <Nav>
+          <NavbarContainer>
+            <NavLogo to='/' onClick={closeMobileMenu}>
+            <LogoImg></LogoImg>
+              Cookup
+            </NavLogo>
+            <HambugerMenuIcon onClick={handleClick}>
+              {/* HamberMenu Icons */}
+              {click ? <FaTimes /> : <FaBars />}
+            </HambugerMenuIcon>
+            <NavMenu onClick={handleClick} click={click}>
+              <NavItem>
+                <NavLinks to='/' onClick={closeMobileMenu}>
+                  Home
+                </NavLinks>
+              </NavItem>
+              <NavItem>
+                <NavLinks to='/aboutUs' onClick={closeMobileMenu}>
+                 About Us 
+                </NavLinks>
+              </NavItem>
+              
+              {props.auth.userIsAuthenticated && props.auth.user && (
+               <NavItem>
+               <NavLinks to='/aboutUs' onClick={closeMobileMenu}>
+                <p>
+                  Hello 
+                  {/* {props.auth.user.username} */}
+                </p>
+                </NavLinks>
+               </NavItem>
+                
+              )}
+              
+              <NavItemBtn>
+                {button ? (
+                  <NavBtnLink to=''>
+                  
+                   <Button onClick={handleSignOut} primary>SIGN OUT  </Button>
+                  </NavBtnLink>
+                ) : (
+                  <NavBtnLink to=''>
+                    <Button onClick={() => {closeMobileMenu(); handleSignOut(); }}fontBig primary> 
+                      SIGN OUT
+                    </Button>
+                  </NavBtnLink>
+                )}
+              </NavItemBtn>
+            </NavMenu>
+          </NavbarContainer>
+        </Nav>
+      </IconContext.Provider>
+     )}
       
     </>
+                
   );
 }
 // Cition 

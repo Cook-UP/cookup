@@ -9,20 +9,45 @@ import Welcome from "./components/auth/Welcome";
 import Home from "./pages/Home";
 import About from "./pages/AboutUs";
 class App extends Component {
+  state = {
+    userIsAuthenticated: false, // tracks  the authentication state of the webapp 
+    userIsAuthenticating: true,
+    user: null // holds the user object 
+  }
+ 
+  // chages the authentication state  when a user logins and logs out 
+  setAuthStatus = authenticated => {
+    this.setState({ userIsAuthenticated: authenticated });
+  }
+  // sets and clears user object when someone login and logs out of the app 
+  setUser = user => {
+    this.setState({ user: user });
+  }
   render() {
+    const authProps = {
+      userIsAuthenticated: this.state.userIsAuthenticated,
+      user: this.state.user,
+      setAuthStatus: this.setAuthStatus,
+      setUser: this.setUser
+    }
     return (
       <div className="App">
         <Router>
           <div>
               {/* Placing  Navbar here has it appear on the top of  every page in Webapp  */}
-            <Navbar />   
-             {/*Link webpages to dispaly the correct component    */}
+            <Navbar auth= {authProps}/>   {/* Passes object properties of authProps to the navbar ( the properties being passed over  are setUser,userIsAuthenticated,etc)*/}
+              {/* React Router Link a web link route with a react Compent  */}
             <Switch> 
-               <Route exact path="/register" component={Register} />
-               <Route exact path="/login" component={Login} /> 
-               <Route exact path="/" component={Home} /> 
-               <Route exact path="/aboutUs" component={About} /> 
-               <Route exact path="/welcome" component={Welcome} />
+              {/* Special render synax to pass passes auth properties into route specified components*/}
+              <Route exact path="/" render={(props) => <Home {...props} auth={authProps} />} /> {/* render={(props) => <Home {...props} allows props 
+              from diffent pages to coexist, without that only one's page props would vaild */}
+              
+              <Route exact path="/register" render={(props) => <Register {...props} auth={authProps} />} />
+              <Route exact path="/login" render={(props) => <Login {...props} auth={authProps} />} />
+              <Route exact path="/welcome" render={(props) => <Welcome {...props} auth={authProps} />} />
+              <Route exact path="/aboutUs" render={(props) => <About {...props} auth={authProps} />} />
+
+               {/* <Route exact path="/" component={Home} />       Nomal way to use react Router */}
             </Switch>
           </div>
         </Router>
