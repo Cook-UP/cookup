@@ -44,13 +44,12 @@ class Register extends Component {
           email: this.state.email,
           phone_number: this.state.phoneNumber,
           given_name: this.state.givenName,
-          family_name:this.state.familyName
+          family_name: this.state.familyName,
         },
 
         validationData: [],
-       
       };
-      
+
       const data = await Auth.signUp(params);
       console.log(data);
       this.setState({ stage: 1 });

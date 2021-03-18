@@ -133,13 +133,14 @@ function Navbar(props) {
                  About Us 
                 </NavLinks>
               </NavItem>
-              
+                {/* Display the users firstname on NavBar when logged in */}
               {props.auth.userIsAuthenticated && props.auth.user && (
                <NavItem>
                <NavLinks to='/aboutUs' onClick={closeMobileMenu}>
                 <p>
-                  Hello 
-                  {/* {props.auth.user.username} */}
+                
+                  Hello {props.auth.user.attributes.given_name}
+                  
                 </p>
                 </NavLinks>
                </NavItem>

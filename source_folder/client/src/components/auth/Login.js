@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { Auth } from "aws-amplify";
 
 class Login extends Component {
@@ -8,11 +8,11 @@ class Login extends Component {
     this.state = {
       username: "",
       password: "",
-      email:"",
+      email: "",
       errors: {
         cognito: null,
-        blankfield: false
-      }
+        blankfield: false,
+      },
     };
   }
 
@@ -20,8 +20,8 @@ class Login extends Component {
     this.setState({
       errors: {
         cognito: null,
-        blankfield: false
-      }
+        blankfield: false,
+      },
     });
   };
 
@@ -45,22 +45,24 @@ class Login extends Component {
       this.props.auth.setAuthStatus(true);
       this.props.auth.setUser(user);
       this.props.history.push("/");
-    }catch(error) {
-      alert("Invaild Login Credentials username or password is incorrect try againc")
+    } catch (error) {
+      alert(
+        "Invaild Login Credentials username or password is incorrect try againc"
+      );
       let err = null;
-      !error.message ? err = { "message": error } : err = error;
+      !error.message ? (err = { message: error }) : (err = error);
       this.setState({
         errors: {
           ...this.state.errors,
-          cognito: err
-        }
+          cognito: err,
+        },
       });
     }
-  };
-  
-      render() {
-        return (
-          <div>
+  }
+
+  render() {
+    return (
+      <div>
         {/* Form to take in User input and create a new account  */}
         <section className="section auth">
           <div className="container">
@@ -91,13 +93,6 @@ class Login extends Component {
                       />
                     </p>
                   </div>
-              
-
-                 
-                  
-
-                 
-                  
 
                   <div className="field">
                     <p className="control">
@@ -113,4 +108,4 @@ class Login extends Component {
     );
   }
 }
-export default Login
+export default Login;
