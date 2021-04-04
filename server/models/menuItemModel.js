@@ -1,3 +1,5 @@
+const mongoose = require("mongoose");
+
 const menuItemSchema = new mongoose.Schema({
     iID: String,        //Unique identifier for item posting
     title: String,      //Title for item posting

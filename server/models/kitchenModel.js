@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const User = require("./userModel");
 
 const kitchenSchema = new mongoose.Schema({
@@ -14,7 +15,7 @@ const kitchenSchema = new mongoose.Schema({
         required: true
     },
     owner: {
-        type: User,
+        type: User.schema,
         required: true
     }
 });

@@ -1,3 +1,5 @@
+const mongoose = require("mongoose");
+
 const userSchema = new mongoose.Schema({
     uID: {              //Unique identifier for users
         type: String,
