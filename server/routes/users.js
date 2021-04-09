@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require('../models/userModel');
 const dbutils = require('../dbutil');
 
+//Create new user
 router.post('/create', async function (req, res, next) {
 	const data = req.body;
 	await dbutils.Users.create(data).then(response => {

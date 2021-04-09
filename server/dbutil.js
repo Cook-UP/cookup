@@ -24,7 +24,7 @@ const Users = {
     get: async function (uID) {
         return await UserModel.findOne({
             uID: uID
-        })
+        });
     },
 
     getAll: async function (obj) {
@@ -62,15 +62,27 @@ const Orders = {
 
 const Kitchen = {
     create: async function (uID, obj) {
-        await UserModel.findOne({
-            uID: uID
-        }).then(user => {
-            console.log(user);
-            obj['owner'] = user;
-            const kitchen = new KitchenModel(obj);
-            kitchen.save();
-        }).catch(error => {
-            console.error(error);
+        return new Promise((resolve, reject) => {
+            UserModel.findOne({
+                uID: uID
+            }).then(async user => {
+                if (user !== null) {
+                    obj['owner'] = user;
+                    const kitchen = new KitchenModel(obj);
+                    await kitchen.save().then(resp => resolve(resp));
+                } else {
+                    reject(`Error: No user found with uID ${uID}`);
+                }
+            }).catch(error => {
+                console.error(error);
+            });
+        });
+
+    },
+
+    get: async function(kID) {
+        return await KitchenModel.findOne({
+            kID: kID
         });
     }
 };

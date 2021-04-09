@@ -10,7 +10,7 @@ router.post('/create', async function (req, res, next) {
 	const data = req.body;
 	console.log(data);
 	if (uID) {
-		dbutils.Kitchen.create(uID, data).then(result => {
+		await dbutils.Kitchen.create(uID, data).then(result => {
 			res.status(201).send(result);
 		}).catch(error => {
 			console.log(error);
@@ -31,6 +31,24 @@ router.get('/getAll', async function(req, res, next) {
 		console.log(error);
 		res.status(500).send(error);
 	});
+});
+
+//Get all kitchens
+router.get('/get', async function(req, res, next) {
+	const kID = req.query.kID;
+	if (kID) {
+	await dbutils.Kitchen.get()
+		.then(kitchen => {
+			console.log(kitchen);
+			res.status(200).send(kitchen);
+		}).catch(error => {
+			console.log(error);
+			res.status(500).send(error);
+		});
+	}
+	else {
+		res.status(400).send("Error: No kID specified");
+	}
 });
 
 module.exports = router;
