@@ -4,7 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors');
-require('dotenv').config();
+require('dotenv').config({path: path.join(__dirname,'.env')});
 
 //Route objects
 const indexRouter = require('./routes/index');
@@ -16,6 +16,9 @@ const dbutils = require('./dbutil');
 const Kitchen = require('./models/kitchenModel');
 
 var app = express();
+
+console.log("express loaded");
+
 
 app.use(logger('dev'));
 app.use(express.json());
