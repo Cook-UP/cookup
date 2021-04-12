@@ -1,5 +1,14 @@
 import React, { Component } from "react";
 import { Auth } from "aws-amplify";
+import { Container, Button } from "../../globalStyles";
+
+import {
+  GlobalFormStyle,
+  StyledFormWrapper,
+  StyledForm,
+  StyledInput,
+  StyledFieldset,
+} from "../PageStructure/FormStyle/Form.elements";
 
 class Register extends Component {
   constructor(props) {
@@ -45,7 +54,7 @@ class Register extends Component {
           phone_number: this.state.phoneNumber,
           given_name: this.state.givenName,
           family_name: this.state.familyName,
-          'custom:userType': this.state.userType
+          "custom:userType": this.state.userType,
         },
 
         validationData: [],
@@ -90,118 +99,96 @@ class Register extends Component {
   render() {
     return (
       <div>
-        {/* Form to take in User input and create a new account */}
-        <section className="section auth">
-          <div className="container">
-            <h1>Register Account</h1>
-            <form onSubmit={this.mySubmitHandler}>
-              <div className="field">
-                <p className="control">
-                  <div className="field">
-                    <p className="control has-icons-left has-icons-right">
-                      <input
-                        className="input"
-                        type="text"
-                        name="username"
-                        placeholder="Enter username"
-                        onChange={this.myChangeHandler}
-                      />
-                    </p>
-                  </div>
-
-                  <div className="field">
-                    <p className="control has-icons-left has-icons-right">
-                      <input
-                        className="input"
-                        type="email"
-                        name="email"
-                        placeholder="Enter email"
-                        onChange={this.myChangeHandler}
-                      />
-                    </p>
-                  </div>
-                  <div className="field">
-                    <p className="control has-icons-left has-icons-right">
-                      <input
-                        className="input"
-                        type="text"
-                        name="phoneNumber"
-                        placeholder="Enter PhoneNumber"
-                        onChange={this.myChangeHandler}
-                      />
-                    </p>
-                  </div>
-
-                  <div className="field">
-                    <p className="control has-icons-left has-icons-right">
-                      <input
-                        className="input"
-                        type="text"
-                        name="givenName"
-                        placeholder="Enter Frist name"
-                        onChange={this.myChangeHandler}
-                      />
-                    </p>
-                  </div>
-                  <div className="field">
-                    <p className="control has-icons-left has-icons-right">
-                      <input
-                        className="input"
-                        type="text"
-                        name="familyName"
-                        placeholder="Enter Last name"
-                        onChange={this.myChangeHandler}
-                      />
-                    </p>
-                  </div>
-
-                  <div className="field">
-                    <p className="control has-icons-left has-icons-right">
-                      <input
-                        className="input"
-                        type="text"
-                        name="userType"
-                        placeholder="UserType"
-                        onChange={this.myChangeHandler}
-                      />
-                    </p>
-                  </div>
-
-                  <div className="field">
-                    <p className="control has-icons-left has-icons-right">
-                      <input
-                        className="input"
-                        type="password"
-                        name="password"
-                        placeholder="Enter Password"
-                        onChange={this.myChangeHandler}
-                      />
-                    </p>
-                  </div>
-                  <div className="field">
-                    <p className="control has-icons-left has-icons-right">
-                      <input
-                        className="input"
-                        type="password"
-                        name="confirmpassword"
-                        placeholder="Confirm Password"
-                        onChange={this.myChangeHandler}
-                      />
-                    </p>
-                  </div>
-
-                  <div className="field">
-                    <p className="control">
-                      <button className="button is-success">Register</button>
-                    </p>
-                  </div>
-                </p>
-              </div>
-            </form>
-          </div>
-        </section>
+        <Container>
+          {" "}
+          {/*Container div for all Component */}
+          <GlobalFormStyle />
+          <StyledFormWrapper>
+            <StyledForm onSubmit={this.mySubmitHandler}>
+              {" "}
+              {/* The form  */}
+              <h2>Register Account</h2>
+              {/* All of the input for the form below */}
+              <label htmlFor="name">Username</label>
+              <StyledInput
+                type="text"
+                name="username"
+                placeholder="Enter username"
+                onChange={this.myChangeHandler}
+              />
+              <label htmlFor="name">Email</label>
+              <StyledInput
+                type="email"
+                name="email"
+                placeholder="Enter email"
+                onChange={this.myChangeHandler}
+              />
+              <label htmlFor="name">Phone Number</label>
+              <StyledInput
+                className="input"
+                type="text"
+                name="phoneNumber"
+                placeholder="Enter Phone Number"
+                onChange={this.myChangeHandler}
+              />
+              <label htmlFor="name">First Name</label>
+              <StyledInput
+                type="text"
+                name="givenName"
+                placeholder="Enter Frist name"
+                onChange={this.myChangeHandler}
+              />
+              <label htmlFor="name">Last Name</label>
+              <StyledInput
+                type="text"
+                name="familyName"
+                placeholder="Enter Last name"
+                onChange={this.myChangeHandler}
+              />
+              <StyledFieldset>
+                <legend>What type of account do you want to create?</legend>
+                <label>
+                  <input
+                    type="radio"
+                    value="Foodie"
+                    name="userType"
+                    onChange={this.myChangeHandler}
+                  />
+                  Foodie
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    value="Chef"
+                    name="userType"
+                    onChange={this.myChangeHandler}
+                  />
+                  Chef
+                </label>
+              </StyledFieldset>
+              <label htmlFor="name">Password</label>
+              <StyledInput
+                className="input"
+                type="password"
+                name="password"
+                placeholder="Enter Password"
+                onChange={this.myChangeHandler}
+              />
+              <label htmlFor="name"> Confrim Password</label>
+              <StyledInput
+                className="input"
+                type="password"
+                name="confirmpassword"
+                placeholder="Confirm Password"
+                onChange={this.myChangeHandler}
+              />
+              <Button type="submit">Register Account</Button>
+            </StyledForm>
+          </StyledFormWrapper>
+        </Container>
       </div>
     );
   }
 }
+
 export default Register;
