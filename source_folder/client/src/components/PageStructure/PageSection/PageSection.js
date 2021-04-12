@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Container, Button } from '../../../globalStyles';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Container, Button } from "../../../globalStyles";
 import {
   Section,
   PageRow,
@@ -10,10 +10,10 @@ import {
   Heading,
   Subtitle,
   ImgWrapper,
-  Img
-} from './PageSection.elements';
+  Img,
+} from "./PageSection.elements";
 
-function PageSection({ 
+function PageSection({
   primary,
   lightBg,
   topLine,
@@ -26,34 +26,32 @@ function PageSection({
   img,
   alt,
   imgStart,
-  start
-}) { // all parameters for the PageStructure 
+  start,
+}) {
+  // all parameters for the PageStructure
   return (
     <>
-    {/* This is all styled using styled components */}
-      <Section lightBg={lightBg,imgStart}>
+      {/* This is all styled using styled components */}
+      <Section lightBg={(lightBg, imgStart)}>
         <Container>
           <PageRow imgStart={imgStart}>
-              <TextWrapper>
-                <TopLine lightTopLine={lightTopLine}>{topLine}</TopLine>
-                <Heading lightText={lightText}>{headline}</Heading>
-                <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
-                <Link to='/register'>
-                  <Button big fontBig primary={primary}>
-                    {buttonLabel}
-                  </Button>
-                </Link>
-              </TextWrapper>
-           
-  
+            <TextWrapper>
+              <TopLine lightTopLine={lightTopLine}>{topLine}</TopLine>
+              <Heading lightText={lightText}>{headline}</Heading>
+              <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
+              <Link to="/register">
+                <Button big fontBig primary={primary}>
+                  {buttonLabel}
+                </Button>
+              </Link>
+            </TextWrapper>
+
             <PageColumn>
               <ImgWrapper start={start}>
                 <Img src={img} alt={alt} />
               </ImgWrapper>
-            </PageColumn> 
-          
+            </PageColumn>
           </PageRow>
-          
         </Container>
       </Section>
     </>

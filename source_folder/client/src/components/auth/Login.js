@@ -1,5 +1,12 @@
 import React, { Component } from "react";
 import { Auth } from "aws-amplify";
+import { Container, Button } from "../../globalStyles";
+import {
+  GlobalFormStyle,
+  StyledFormWrapper,
+  StyledForm,
+  StyledInput,
+} from "../PageStructure/FormStyle/Form.elements";
 
 class Login extends Component {
   constructor(props) {
@@ -64,46 +71,34 @@ class Login extends Component {
     return (
       <div>
         {/* Form to take in User input and create a new account  */}
-        <section className="section auth">
-          <div className="container">
-            <h1>Login </h1>
-            <form onSubmit={this.mySubmitHandler}>
-              <div className="field">
-                <p className="control">
-                  <div className="field">
-                    <p className="control has-icons-left has-icons-right">
-                      <input
-                        className="input"
-                        type="text"
-                        name="username"
-                        placeholder="Enter username"
-                        onChange={this.myChangeHandler}
-                      />
-                    </p>
-                  </div>
+        <Container>
+          {/*Container div for all Component */}
+          <GlobalFormStyle />
+          <StyledFormWrapper>
+            <StyledForm onSubmit={this.mySubmitHandler}>
+              {/* The form  */}
+              <h2>Login </h2>
+              {/* All of the input for the form below */}
+              <label htmlFor="name">Username or Email</label>
+              <StyledInput
+                type="text"
+                name="username"
+                placeholder="Enter Username or Email"
+                onChange={this.myChangeHandler}
+              />
 
-                  <div className="field">
-                    <p className="control has-icons-left has-icons-right">
-                      <input
-                        className="input"
-                        type="password"
-                        name="password"
-                        placeholder="Enter Password"
-                        onChange={this.myChangeHandler}
-                      />
-                    </p>
-                  </div>
+              <label htmlFor="name">Password</label>
+              <StyledInput
+                type="password"
+                name="password"
+                placeholder="Enter Password"
+                onChange={this.myChangeHandler}
+              />
 
-                  <div className="field">
-                    <p className="control">
-                      <button className="button is-success">Login</button>
-                    </p>
-                  </div>
-                </p>
-              </div>
-            </form>
-          </div>
-        </section>
+              <Button type="submit">Login</Button>
+            </StyledForm>
+          </StyledFormWrapper>
+        </Container>
       </div>
     );
   }

@@ -100,12 +100,12 @@ class Register extends Component {
     return (
       <div>
         <Container>
-          {" "}
+        
           {/*Container div for all Component */}
           <GlobalFormStyle />
           <StyledFormWrapper>
             <StyledForm onSubmit={this.mySubmitHandler}>
-              {" "}
+              
               {/* The form  */}
               <h2>Register Account</h2>
               {/* All of the input for the form below */}
