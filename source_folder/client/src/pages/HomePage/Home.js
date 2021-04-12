@@ -1,6 +1,6 @@
 import React from 'react';
 import { homeSectionOne, homeSectionTwo, homeSectionThree} from './Data';
-import PageSection from "../../components/PageSection/PageSection";
+import PageSection from "../../components/PageStructure/PageSection/PageSection";
 
 function Home() {
   return (

@@ -45,6 +45,7 @@ class Register extends Component {
           phone_number: this.state.phoneNumber,
           given_name: this.state.givenName,
           family_name: this.state.familyName,
+          'custom:userType': this.state.userType
         },
 
         validationData: [],
@@ -149,6 +150,18 @@ class Register extends Component {
                         type="text"
                         name="familyName"
                         placeholder="Enter Last name"
+                        onChange={this.myChangeHandler}
+                      />
+                    </p>
+                  </div>
+
+                  <div className="field">
+                    <p className="control has-icons-left has-icons-right">
+                      <input
+                        className="input"
+                        type="text"
+                        name="userType"
+                        placeholder="UserType"
                         onChange={this.myChangeHandler}
                       />
                     </p>
