@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import { Auth } from "aws-amplify";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import GlobalStyle from "./globalStyles";
 import Navbar from "./components/Nav/Navbar";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Welcome from "./components/auth/Welcome";
-import Home from "./pages/Home";
+import Home from "./pages/HomePage/Home";
 import About from "./pages/AboutUs";
 class App extends Component {
   state = {
