@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Auth } from "aws-amplify";
 import { Container, Button } from "../../globalStyles";
+// import ()
 import axios from 'axios'; 
 
 import {
@@ -56,7 +57,7 @@ class Register extends Component {
           given_name: this.state.givenName,
           family_name: this.state.familyName,
           address: this.state.address,
-          "custom:userType": this.state.userType,
+          "custom:userType": this.state.userType, // custom attr
         },
 
         validationData: [],
@@ -66,7 +67,7 @@ class Register extends Component {
       console.log("This is the data");
       console.log(userInfo );
      
-      // format phone nubmer in  555-555-5555 format
+      // formats  phone nubmer from +15555555555 to   555-555-5555 format
       const formated_phone_number = this.state.phoneNumber.substring(2,5)+"-"+this.state.phoneNumber.substring(5,8)+"-"+this.state.phoneNumber.substring(8,13)
 
       const new_user ={ // formating of the user details to fix format of the mongodb database

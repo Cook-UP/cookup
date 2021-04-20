@@ -7,6 +7,8 @@ import Login from "./components/auth/Login";
 import Welcome from "./components/auth/Welcome";
 import Home from "./pages/HomePage/Home";
 import About from "./pages/AboutUs";
+import RegisterKitchen from "./ChefPages/RegisterKitchen";
+import S3Upload from "./components/Upload/S3Upload.js";
 class App extends Component {
   state = {
     userIsAuthenticated: false, // tracks  the authentication state of the webapp
@@ -86,6 +88,18 @@ class App extends Component {
                   path="/aboutUs"
                   render={(props) => <About {...props} auth={authProps} />}
                 />
+                 <Route
+                  exact
+                  path="/s3"
+                  render={(props) => <S3Upload  {...props} auth={authProps} />}
+                />
+
+               <Route
+                  exact
+                  path="/RegisterKitchen"
+                  render={(props) => <RegisterKitchen   {...props} auth={authProps} />}
+                />
+
                 {/* <Route exact path="/" component={Home} />       Nomal way to use react Router */}
               </Switch>
             </div>
