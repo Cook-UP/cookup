@@ -3,8 +3,10 @@ import styled from "styled-components";
 export const Section = styled.div`
   color: #fff;
   padding: 160px 0;
-  background: ${({ lightBg }) => (lightBg ? "#fff" : "#0f006e")};
+  background: ${({ lightBg }) => (lightBg ? "#fff" : "#0f006e")}; 
 `;
+// "#CC5500" burnt oragne 
+// "#0f006e" blue 
 // everything horizontal within the Section
 export const PageRow = styled.div`
   display: flex;

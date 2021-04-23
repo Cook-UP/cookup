@@ -1,10 +1,12 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { Container } from '../../globalStyles';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { Container } from "../../globalStyles";
 import Logo from "../../images/CookupLogo.png";
 
 export const Nav = styled.nav`
   background: #0f006e;
+  // #CC5500
+  //#0f006e
   height: 80px;
   display: flex;
   justify-content: center;
@@ -32,9 +34,6 @@ export const NavLogo = styled(Link)`
   align-items: center;
 `;
 
-
-
-
 export const HambugerMenuIcon = styled.div`
   display: none;
   @media screen and (max-width: 960px) {
@@ -53,15 +52,17 @@ export const NavMenu = styled.ul`
   align-items: center;
   list-style: none;
   text-align: center;
-  @media screen and (max-width: 960px) { // ALL @media screen styling is what makes the site responsive
+  @media screen and (max-width: 960px) {
+    // ALL @media screen styling is what makes the site responsive
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 90vh;
     position: absolute;
     top: 80px;
-    //Keeps the expaneded version of hambuger menu from displying on the webapge if not clikced on 
-    left: ${({ click }) => (click ? 0 : '-200%')}; // negative -200 keeps it from being show 
+    //Keeps the expaneded version of hambuger menu from displying on the webapge if not clikced on
+    left: ${({ click }) =>
+      click ? 0 : "-200%"}; // negative -200 keeps it from being show
     opacity: 1;
     transition: all 0.5s ease;
     background: #0f006e;
@@ -122,19 +123,19 @@ export const NavBtnLink = styled(Link)`
   border: none;
   outline: none;
 `;
-// Cition 
+// Cition
 /*
-     *    Title: react-website-styled-components-v1
-     *    Author: briancodex
-     *    Date: 2021
-     *    Availability: https://github.com/briancodex/react-website-styled-components-v1]
-     */
+ *    Title: react-website-styled-components-v1
+ *    Author: briancodex
+ *    Date: 2021
+ *    Availability: https://github.com/briancodex/react-website-styled-components-v1]
+ */
 
-// Styleing for the Logo 
+// Styleing for the Logo
 export const LogoImg = styled.img.attrs({
-    src: `${Logo}`
-  })`
+  src: `${Logo}`,
+})`
   width: 50px;
   height: 30px;
   margin-right: 0.5rem;
-  `;
+`;

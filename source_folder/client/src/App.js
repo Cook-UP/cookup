@@ -9,6 +9,7 @@ import Home from "./pages/HomePage/Home";
 import About from "./pages/AboutUs";
 import RegisterKitchen from "./ChefPages/RegisterKitchen";
 import MenuUpload from "./ChefPages/MenuUpload";
+import DisplayKitchens from "./FoodiePages/DisplayKitchens";
 import S3Upload from "./components/Upload/S3Upload.js";
 class App extends Component {
   state = {
@@ -106,6 +107,12 @@ class App extends Component {
                   path="/MenuUpload"
                   render={(props) => <MenuUpload {...props} auth={authProps} />}
                 />
+                 <Route
+                  exact
+                  path="/DisplayKitchens"
+                  render={(props) => <DisplayKitchens{...props} auth={authProps} />}
+                />
+                DisplayKitchens
                 {/* <Route exact path="/" component={Home} />   MenuUpload    Nomal way to use react Router */}
               </Switch>
             </div>

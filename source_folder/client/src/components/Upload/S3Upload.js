@@ -12,7 +12,7 @@ export class S3Upload extends Component {
     };
   }
   //
-    onFileChange = (e) => {
+  onFileChange = (e) => {
     this.setState({ success: false, image: "" });
     let files = e.target.files || e.dataTransfer.files;
     if (!files.length) return;
