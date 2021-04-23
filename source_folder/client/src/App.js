@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import { Auth } from "aws-amplify";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -7,6 +8,8 @@ import Login from "./components/auth/Login";
 import Welcome from "./components/auth/Welcome";
 import Home from "./pages/HomePage/Home";
 import About from "./pages/AboutUs";
+import Footer from "./components/Footer";
+
 class App extends Component {
   state = {
     userIsAuthenticated: false, // tracks  the authentication state of the webapp
@@ -37,7 +40,7 @@ class App extends Component {
         console.log(error);
       }
     }
-    // This line of code makes sure wheather or not componentDidMount try catch succeeds the webpage will render
+    // This line of code makes sure whether or not componentDidMount try catch succeeds the webpage will render
     this.setState({ isAuthenticating: false });
   }
   render() {
@@ -48,7 +51,7 @@ class App extends Component {
       setUser: this.setUser,
     };
     return (
-      // This will checks if the wepage is currently  Authenticating a user and if not uthenticating a user renders page
+      // This will checks if the webpage is currently  Authenticating a user and if not uthenticating a user renders page
       !this.state.isAuthenticating && (
         <div className="App">
           <Router>
@@ -88,9 +91,13 @@ class App extends Component {
                 />
                 {/* <Route exact path="/" component={Home} />       Nomal way to use react Router */}
               </Switch>
+              
             </div>
+           
           </Router>
+          <Footer />
         </div>
+    
       )
     );
   }
