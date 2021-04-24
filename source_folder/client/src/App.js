@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import { Auth } from "aws-amplify";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -11,6 +12,8 @@ import RegisterKitchen from "./ChefPages/RegisterKitchen";
 import MenuUpload from "./ChefPages/MenuUpload";
 import DisplayKitchens from "./FoodiePages/DisplayKitchens";
 import S3Upload from "./components/Upload/S3Upload.js";
+import Footer from "./components/Footer";
+
 class App extends Component {
   state = {
     userIsAuthenticated: false, // tracks  the authentication state of the webapp
@@ -41,7 +44,7 @@ class App extends Component {
         console.log(error);
       }
     }
-    // This line of code makes sure wheather or not componentDidMount try catch succeeds the webpage will render
+    // This line of code makes sure whether or not componentDidMount try catch succeeds the webpage will render
     this.setState({ isAuthenticating: false });
   }
   render() {
@@ -52,7 +55,7 @@ class App extends Component {
       setUser: this.setUser,
     };
     return (
-      // This will checks if the wepage is currently  Authenticating a user and if not uthenticating a user renders page
+      // This will checks if the webpage is currently  Authenticating a user and if not uthenticating a user renders page
       !this.state.isAuthenticating && (
         <div className="App">
           <Router>
@@ -112,12 +115,15 @@ class App extends Component {
                   path="/DisplayKitchens"
                   render={(props) => <DisplayKitchens{...props} auth={authProps} />}
                 />
-                DisplayKitchens
                 {/* <Route exact path="/" component={Home} />   MenuUpload    Nomal way to use react Router */}
               </Switch>
+              
             </div>
+           
           </Router>
+          <Footer />
         </div>
+    
       )
     );
   }

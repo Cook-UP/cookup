@@ -1,5 +1,5 @@
 import React from "react";
-import { homeSectionOne, homeSectionTwo, homeSectionThree } from "./Data";
+import { homeSectionOne, homeSectionTwo, homeSectionThree} from "./Data";
 import PageSection from "../../components/PageStructure/PageSection/PageSection";
 
 function Home() {
@@ -8,6 +8,7 @@ function Home() {
       <PageSection {...homeSectionOne} />
       <PageSection {...homeSectionTwo} />
       <PageSection {...homeSectionThree} />
+
     </>
   );
 }
