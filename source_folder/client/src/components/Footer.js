@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components'
 import {
     Box, 
     Container, Row, 
@@ -7,7 +6,6 @@ import {
     Heading,
     
 } from './FooterStyle';
-import { NonRetryableError } from '@aws-amplify/core';
 
 const Footer  = () => {
     return (

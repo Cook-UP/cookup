@@ -7,12 +7,15 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import Welcome from "./components/auth/Welcome";
 import Home from "./pages/HomePage/Home";
-import About from "./pages/AboutUs";
+import ContactConfirmation from "./pages/ContactUs/ContactConfirmation";
+import ContactUS from "./pages/ContactUs/ContactUS";
 import RegisterKitchen from "./ChefPages/RegisterKitchen";
 import MenuUpload from "./ChefPages/MenuUpload";
 import DisplayKitchens from "./FoodiePages/DisplayKitchens";
 import S3Upload from "./components/Upload/S3Upload.js";
 import Footer from "./components/Footer";
+import Review from  "./pages/Review/Review";
+import ConfrimReview from  "./pages/Review/ConfrimReview";
 
 class App extends Component {
   state = {
@@ -90,9 +93,15 @@ class App extends Component {
                 />
                 <Route
                   exact
-                  path="/aboutUs"
-                  render={(props) => <About {...props} auth={authProps} />}
+                  path="/contact"
+                  render={(props) => <ContactUS {...props} auth={authProps} />}
                 />
+                <Route
+                  exact
+                  path="/contactConfirmation"
+                  render={(props) => <ContactConfirmation {...props} auth={authProps} />}
+                />
+                
                 <Route
                   exact
                   path="/s3"
@@ -115,6 +124,19 @@ class App extends Component {
                   path="/DisplayKitchens"
                   render={(props) => <DisplayKitchens{...props} auth={authProps} />}
                 />
+                 <Route
+                  exact
+                  path="/ConfrimReview"
+                  render={(props) => <ConfrimReview{...props} auth={authProps} />}
+                />
+
+                 <Route
+                  exact
+                  path="/Review"
+                  render={(props) => <Review{...props} auth={authProps} />}
+                />
+
+
                 {/* <Route exact path="/" component={Home} />   MenuUpload    Nomal way to use react Router */}
               </Switch>
               
