@@ -14,6 +14,9 @@ export const GlobalFormStyle = createGlobalStyle` //
   }
 `;
 
+// "#CC5500" burnt oragne 
+// "#0f006e" blue 
+// #d6d6a3
 export const sharedStyles = css`
   background-color: #eee;
   height: 40px;

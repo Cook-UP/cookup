@@ -1,45 +1,49 @@
 import styled from 'styled-components';
 
-export const ProductsContainer = styled.div`
-  /* width: 100vw; */
+export const MenuContainer = styled.div`
   min-height: 100vh;
-  padding: 5rem calc((100vw - 1300px) / 2);
-  background: #150f0f;
-  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 5rem calc((100vw - 1300px) / 2); // padding between menu items
+  background: linear-gradient(to bottom,  #0f006e, #d6d6a3);
+  color: #f8f8ff;  // color of the text on the file 
 `;
 
-export const ProductWrapper = styled.div`
+export const MenuWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
 `;
 
-export const ProductCard = styled.div`
+export const MenuItemCard = styled.div`
   margin: 0 2rem;
   line-height: 2;
   width: 300px;
+  
 `;
 
-export const ProductImg = styled.img`
+export const MenuItemImg = styled.img`
   height: 300px;
+  border-radius :25px;
+  box-shadow: 8px 8px #d6d6a3;
   min-width: 300px;
   max-width: 100%;
-  box-shadow: 8px 8px #fdc500;
+  
+  
 `;
 
-export const ProductsHeading = styled.h1`
+export const MenuHeading = styled.h1`
   font-size: clamp(2rem, 2.5vw, 3rem);
   text-align: center;
   margin-bottom: 5rem;
 `;
 
-export const ProductTitle = styled.h2`
+export const MenuItemName = styled.h2`
   font-weight: 400;
   font-size: 1.5rem;
 `;
 
-export const ProductInfo = styled.div`
+export const MenuItemInfo = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,16 +52,16 @@ export const ProductInfo = styled.div`
   text-align: center;
 `;
 
-export const ProductDesc = styled.p`
-  margin-bottom: 1rem;
+export const MenuItemDesc = styled.p`
+  margin-bottom: 0.5rem;
 `;
 
-export const ProductPrice = styled.p`
-  margin-bottom: 1rem;
+export const MenuItemPrice = styled.p`
+  margin-bottom: 0.5rem;
   font-size: 2rem;
 `;
 
-export const ProductButton = styled.button`
+export const MenuButton = styled.button`
   font-size: 1rem;
   padding: 1rem 4rem;
   border: none;

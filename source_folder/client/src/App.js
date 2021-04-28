@@ -11,7 +11,7 @@ import ContactConfirmation from "./pages/ContactUs/ContactConfirmation";
 import ContactUS from "./pages/ContactUs/ContactUS";
 import RegisterKitchen from "./ChefPages/RegisterKitchen";
 import MenuUpload from "./ChefPages/MenuUpload";
-import DisplayKitchens from "./FoodiePages/DisplayKitchens";
+import DisplayMenu from "./FoodiePages/DisplayMenu";
 import S3Upload from "./components/Upload/S3Upload.js";
 import Footer from "./components/Footer";
 import Review from  "./pages/Review/Review";
@@ -121,8 +121,8 @@ class App extends Component {
                 />
                  <Route
                   exact
-                  path="/DisplayKitchens"
-                  render={(props) => <DisplayKitchens{...props} auth={authProps} />}
+                  path="/DisplayMenu"
+                  render={(props) => <DisplayMenu{...props} auth={authProps} />}
                 />
                  <Route
                   exact
