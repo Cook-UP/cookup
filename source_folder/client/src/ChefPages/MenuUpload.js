@@ -56,11 +56,12 @@ class MenuUpload extends Component {
     await axios.get(API_ENDPOINT).then((res) => {
       let response = res.data;
       this.setState({ response });
-
+    
       console.log("The Response is : ", response);
-      console.log("The Response URL is : ", response.uploadURL); // this is the url
+      console.log("The url the picture can be found at is : ", response.uploadURL.split('?')[0]); // this is the url
       console.log("Uploading The Image: ", this.state.image);
       this.setState({ success: true }); // after the url is retrieved successfully the picture can be uploaded
+      this.setState({url: response.uploadURL.split('?')[0]})
 
       let binary = atob(this.state.image.split(",")[1]);
       let array = [];
@@ -76,7 +77,9 @@ class MenuUpload extends Component {
         body: blobData,
       });
 
+      console.log("Hello the url of the image is saved in state as "+this.state.url);
       console.log("Result: ", result);
+    
 
       // Final URL for the user doesn't need the query string params
       this.uploadURL = response.uploadURL.split("?")[0];
