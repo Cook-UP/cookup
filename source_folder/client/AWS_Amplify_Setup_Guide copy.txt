@@ -1,0 +1,27 @@
+
+Run amplify init in the terminal after cloning the Project in the Client Via the terminal
+You should get a prompt like below:
+amplify init
+
+Do you to use an existing environment? (Y/n) Y
+
+Choose the environment you would like to use: dev
+
+Choose your default editor: Visual Studio Code
+
+Choose the type of app you're building: javascript
+
+What javascript framework you're using: react
+
+Source Directory Path: src
+
+Distribution Directory Path: www
+
+Build Command: npm run-script build
+
+Do you want to use an AWS Key? 
+
+
+Enter the Key in the appropriate section	
+Access key ID : AKIAS4VIYZ7ARGTWQWVB
+Secret access key: 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
