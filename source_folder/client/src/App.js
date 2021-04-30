@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import { Auth } from "aws-amplify";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -14,14 +13,16 @@ import MenuUpload from "./ChefPages/MenuUpload";
 import DisplayMenu from "./FoodiePages/DisplayMenu";
 import S3Upload from "./components/Upload/S3Upload.js";
 import Footer from "./components/Footer";
-import Review from  "./pages/Review/Review";
-import ConfrimReview from  "./pages/Review/ConfrimReview";
-
+import Review from "./pages/Review/Review";
+import ConfrimReview from "./pages/Review/ConfrimReview";
+import Cart from "./components/Cart/Cart";
 class App extends Component {
   state = {
     userIsAuthenticated: false, // tracks  the authentication state of the webapp
     userIsAuthenticating: true,
     user: null, // holds the user object
+    cart:[],
+    setCart:[]
   };
 
   // chages the authentication state  when a user logins and logs out
@@ -51,11 +52,14 @@ class App extends Component {
     this.setState({ isAuthenticating: false });
   }
   render() {
-    const authProps = {
+    const authProps = { // this props will able to be accesssed by every Page of the site
       userIsAuthenticated: this.state.userIsAuthenticated,
       user: this.state.user,
       setAuthStatus: this.setAuthStatus,
       setUser: this.setUser,
+      cart: this.state.cart,
+      setCart:[this.state.setCart]
+
     };
     return (
       // This will checks if the webpage is currently  Authenticating a user and if not uthenticating a user renders page
@@ -99,9 +103,10 @@ class App extends Component {
                 <Route
                   exact
                   path="/contactConfirmation"
-                  render={(props) => <ContactConfirmation {...props} auth={authProps} />}
+                  render={(props) => (
+                    <ContactConfirmation {...props} auth={authProps} />
+                  )}
                 />
-                
                 <Route
                   exact
                   path="/s3"
@@ -119,33 +124,36 @@ class App extends Component {
                   path="/MenuUpload"
                   render={(props) => <MenuUpload {...props} auth={authProps} />}
                 />
-                 <Route
+                <Route
                   exact
                   path="/DisplayMenu"
-                  render={(props) => <DisplayMenu{...props} auth={authProps} />}
+                  render={(props) => (
+                    <DisplayMenu {...props} auth={authProps} />
+                  )}
                 />
-                 <Route
+                <Route
                   exact
                   path="/ConfrimReview"
-                  render={(props) => <ConfrimReview{...props} auth={authProps} />}
+                  render={(props) => (
+                    <ConfrimReview {...props} auth={authProps} />
+                  )}
                 />
-
-                 <Route
+                <Route
                   exact
                   path="/Review"
-                  render={(props) => <Review{...props} auth={authProps} />}
+                  render={(props) => <Review {...props} auth={authProps} />}
                 />
-
-
+                <Route
+                  exact
+                  path="/Cart"
+                  render={(props) => <Cart {...props} auth={authProps} />}
+                />
                 {/* <Route exact path="/" component={Home} />   MenuUpload    Nomal way to use react Router */}
               </Switch>
-              
             </div>
-           
           </Router>
           <Footer />
         </div>
-    
       )
     );
   }

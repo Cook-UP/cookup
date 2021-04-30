@@ -1,11 +1,11 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const MenuContainer = styled.div`
   min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
   padding: 5rem calc((100vw - 1300px) / 2); // padding between menu items
-  background: linear-gradient(to bottom,  #0f006e, #d6d6a3);
-  color: #f8f8ff;  // color of the text on the file 
+  background: linear-gradient(to bottom, #0f006e, #d6d6a3);
+  color: #f8f8ff; // color of the text on the file
 `;
 
 export const MenuWrapper = styled.div`
@@ -19,17 +19,14 @@ export const MenuItemCard = styled.div`
   margin: 0 2rem;
   line-height: 2;
   width: 300px;
-  
 `;
 
 export const MenuItemImg = styled.img`
   height: 300px;
-  border-radius :25px;
+  border-radius: 25px;
   box-shadow: 8px 8px #d6d6a3;
   min-width: 300px;
   max-width: 100%;
-  
-  
 `;
 
 export const MenuHeading = styled.h1`

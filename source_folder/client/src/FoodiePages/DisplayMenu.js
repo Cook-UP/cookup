@@ -11,7 +11,7 @@ class DisplayMenu extends Component {
         return (
             <div>
                  <Router>
-      
+        {/* // create an instance of the menu component using the data from /components/Menu/MenuData" for the menuData  */}
       <Menu heading='Menu' menuData={MenuData1} />
     
       <Menu heading='Menu' menuData={MenuData2} />

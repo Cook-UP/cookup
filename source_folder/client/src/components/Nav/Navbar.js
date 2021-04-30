@@ -133,6 +133,11 @@ function Navbar(props) {
                  Contact US
                 </NavLinks>
               </NavItem>
+              <NavItem>
+                <NavLinks to='/Cart' onClick={closeMobileMenu}>
+                 Cart ({props.auth.cart.length})
+                </NavLinks>
+              </NavItem>
                 {/* Display the users firstname on NavBar when logged in */}
               {props.auth.userIsAuthenticated && props.auth.user && (
                <NavItem>
