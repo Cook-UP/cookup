@@ -17,6 +17,9 @@ import Footer from "./components/Footer";
 import Review from "./pages/Review/Review";
 import ConfrimReview from "./pages/Review/ConfrimReview";
 import Cart from "./components/Cart/Cart";
+import Checkout from "./components/Checkout/Checkout";
+import OrderConfirmation from "./components/Checkout/OrderConfirmation";
+
 
 
 class App extends Component {
@@ -158,6 +161,22 @@ class App extends Component {
                   path="/Cart"
                   render={(props) => <Cart {...props} auth={authProps} />}
                 />
+                <Route
+                  exact
+                  path="/Checkout"
+                  render={(props) => (
+                    <Checkout {...props} auth={authProps} />
+                  )}
+                />
+
+<Route
+                  exact
+                  path="/OrderConfirmation"
+                  render={(props) => (
+                    <OrderConfirmation {...props} auth={authProps} />
+                  )}
+                />
+              
                  
                 {/* <Route exact path="/" component={Home} />   MenuUpload    Nomal way to use react Router */}
               </Switch>
