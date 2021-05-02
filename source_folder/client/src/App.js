@@ -11,17 +11,20 @@ import ContactUS from "./pages/ContactUs/ContactUS";
 import RegisterKitchen from "./ChefPages/RegisterKitchen";
 import MenuUpload from "./ChefPages/MenuUpload";
 import DisplayMenu from "./FoodiePages/DisplayMenu";
+import DisplayMenu2 from "./FoodiePages/DisplayMenu2";
 import S3Upload from "./components/Upload/S3Upload.js";
 import Footer from "./components/Footer";
 import Review from "./pages/Review/Review";
 import ConfrimReview from "./pages/Review/ConfrimReview";
 import Cart from "./components/Cart/Cart";
+
+
 class App extends Component {
   state = {
     userIsAuthenticated: false, // tracks  the authentication state of the webapp
     userIsAuthenticating: true,
     user: null, // holds the user object
-    cart:[],
+    cart:["Hello"],
     setCart:[]
   };
 
@@ -131,6 +134,13 @@ class App extends Component {
                     <DisplayMenu {...props} auth={authProps} />
                   )}
                 />
+                  <Route
+                  exact
+                  path="/DisplayMenu2"
+                  render={(props) => (
+                    <DisplayMenu2 {...props} auth={authProps} />
+                  )}
+                />
                 <Route
                   exact
                   path="/ConfrimReview"
@@ -148,6 +158,7 @@ class App extends Component {
                   path="/Cart"
                   render={(props) => <Cart {...props} auth={authProps} />}
                 />
+                 
                 {/* <Route exact path="/" component={Home} />   MenuUpload    Nomal way to use react Router */}
               </Switch>
             </div>

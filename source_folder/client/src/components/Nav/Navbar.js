@@ -17,6 +17,7 @@ import {
   LogoImg,
 } from './Navbar.elements';
 
+
 function Navbar(props) {
   async function handleSignOut() {
     try {
