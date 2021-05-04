@@ -18,7 +18,6 @@ import ConfrimReview from "./pages/Review/ConfrimReview";
 import Cart from "./components/Cart/Cart";
 import Checkout from "./components/Checkout/Checkout";
 import OrderConfirmation from "./components/Checkout/OrderConfirmation";
-import Products from "./components/Products/Products";
 
 
 
@@ -170,13 +169,7 @@ class App extends Component {
                     <OrderConfirmation {...props} auth={authProps} />
                   )}
                 />
-                <Route
-                  exact
-                  path="/Products"
-                  render={(props) => (
-                    < Products {...props} auth={authProps} />
-                  )}
-                />
+              
               
               
                  
