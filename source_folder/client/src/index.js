@@ -1,11 +1,13 @@
 import React from "react";
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom";
 import Amplify from "aws-amplify";
 import awsExports from "./aws-exports";
 import config from "./config";
-import App from './App';
+import App from "./App";
+// Redux
+import { Provider } from "react-redux";
+import store from "./redux/store";
 Amplify.configure(awsExports);
-
 
 Amplify.configure({
   Auth: {
@@ -18,9 +20,12 @@ Amplify.configure({
 
 ReactDOM.render(
   <div>
-    <App/>
+    {/* connects the react-app to redux */}
+    <Provider store={store}>
+      {" "}
+      <App />
+    </Provider>
   </div>,
 
   document.getElementById("root")
 );
-

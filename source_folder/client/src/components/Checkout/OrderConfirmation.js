@@ -14,7 +14,9 @@ class OrderConfirmation  extends Component {
          <GlobalFormStyle />
          <StyledFormWrapper>
          <StyledForm>
-        <h1>Your order has been sumbmitted</h1>
+         <h1>Your order has been submitted </h1>
+        <p>Your Eta is 30 mins</p>
+       
         </StyledForm>
        
         </StyledFormWrapper>

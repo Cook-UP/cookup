@@ -11,7 +11,6 @@ import ContactUS from "./pages/ContactUs/ContactUS";
 import RegisterKitchen from "./ChefPages/RegisterKitchen";
 import MenuUpload from "./ChefPages/MenuUpload";
 import DisplayMenu from "./FoodiePages/DisplayMenu";
-import DisplayMenu2 from "./FoodiePages/DisplayMenu2";
 import S3Upload from "./components/Upload/S3Upload.js";
 import Footer from "./components/Footer";
 import Review from "./pages/Review/Review";
@@ -19,6 +18,7 @@ import ConfrimReview from "./pages/Review/ConfrimReview";
 import Cart from "./components/Cart/Cart";
 import Checkout from "./components/Checkout/Checkout";
 import OrderConfirmation from "./components/Checkout/OrderConfirmation";
+import Products from "./components/Products/Products";
 
 
 
@@ -49,6 +49,7 @@ class App extends Component {
       // stores user from local storage as user from Aws Cognito
       const user = await Auth.currentAuthenticatedUser();
       this.setUser(user);
+      // setter
     } catch (error) {
       if (error !== "No current user") {
         console.log(error);
@@ -137,13 +138,6 @@ class App extends Component {
                     <DisplayMenu {...props} auth={authProps} />
                   )}
                 />
-                  <Route
-                  exact
-                  path="/DisplayMenu2"
-                  render={(props) => (
-                    <DisplayMenu2 {...props} auth={authProps} />
-                  )}
-                />
                 <Route
                   exact
                   path="/ConfrimReview"
@@ -176,6 +170,14 @@ class App extends Component {
                     <OrderConfirmation {...props} auth={authProps} />
                   )}
                 />
+                <Route
+                  exact
+                  path="/Products"
+                  render={(props) => (
+                    < Products {...props} auth={authProps} />
+                  )}
+                />
+              
               
                  
                 {/* <Route exact path="/" component={Home} />   MenuUpload    Nomal way to use react Router */}

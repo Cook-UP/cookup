@@ -14,7 +14,7 @@ export const GlobalFormStyle = createGlobalStyle` //
   }
 `;
 
-// "#CC5500" burnt oragne 
+// "#CC5500" burnt orange 
 // "#0f006e" blue 
 // #d6d6a3
 export const sharedStyles = css`
@@ -34,6 +34,7 @@ export const StyledFormWrapper = styled.div`
   height: 100vh;
   padding: 0 20px;
 `;
+
 // styling for the form 
 export  const StyledForm = styled.form`
   width: 80%;
@@ -45,9 +46,25 @@ export  const StyledForm = styled.form`
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 `;
 
+export  const StyledMiniForm = styled.form`
+  width: 20%;
+  max-width: 300x;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+`;
+
 export const StyledInput = styled.input`
   display: block;
   width: 100%;
+  ${sharedStyles}
+`;
+
+export const StyledMiniInput = styled.input`
+display: flex;
+width: 30;;
   ${sharedStyles}
 `;
 

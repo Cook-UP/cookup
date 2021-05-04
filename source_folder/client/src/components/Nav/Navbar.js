@@ -17,7 +17,7 @@ import {
   LogoImg,
 } from './Navbar.elements';
 
-
+import CartCounter from "../Cart/CartCounter"
 function Navbar(props) {
   async function handleSignOut() {
     try {
@@ -136,7 +136,8 @@ function Navbar(props) {
               </NavItem>
               <NavItem>
                 <NavLinks to='/Cart' onClick={closeMobileMenu}>
-                 Cart ({props.auth.cart.length})
+                 {/* Cart ({props.auth.cart.length}) */}
+                < CartCounter/>
                 </NavLinks>
               </NavItem>
                 {/* Display the users firstname on NavBar when logged in */}
