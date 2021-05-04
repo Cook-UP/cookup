@@ -47,7 +47,8 @@ const Cart = ({ cart }) => {
           <h4>Cart Summary</h4>
           <CartDisplayPrice>
             <span>TOTAL: ({totalItems} items)</span>
-            <span>$ {totalPrice}</span>
+            <span>$ { Math.round(totalPrice * 100) / 100}</span>
+             
           </CartDisplayPrice>
           <Link to="/Checkout">
             <Button>Proceed To Checkout</Button>
