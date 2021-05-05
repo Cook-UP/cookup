@@ -4,6 +4,7 @@ import Amplify from "aws-amplify";
 import awsExports from "./aws-exports";
 import config from "./config";
 import App from "./App";
+
 // Redux
 import { Provider } from "react-redux";
 import store from "./redux/store";

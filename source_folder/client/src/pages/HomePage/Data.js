@@ -12,6 +12,7 @@ export const homeSectionOne = {
   img: require("../../images/FoodStock.jpeg").default,
   alt: "Vault",
   start: "true", // start being true determine that the image will appear on the left
+  linkTo:"/DisplayRestaurant"
 };
 // For the Second section with a bluebackgground
 export const homeSectionTwo = {
@@ -37,11 +38,13 @@ export const homeSectionThree = {
   lightTopLine: false,
   lightText: false,
   lightTextDesc: false,
-  headline: "Enjoy All The Flavors Your Nieghborhood Has To Offer!",
+  headline: "Enjoy All The Flavors Your Nieghborhood Has To Offer And Give Them A Review",
   imgStart: "start",
   img: require("../../images/multicultural_food.jpg").default,
   alt: "Vault",
   start: "true",
+  buttonLabel: "Review",
+  linkTo:"/Review"
 };
 
 

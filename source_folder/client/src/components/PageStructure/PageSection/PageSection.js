@@ -27,6 +27,7 @@ function PageSection({
   alt,
   imgStart,
   start,
+  linkTo,
 }) {
   // all parameters for the PageStructure
   return (
@@ -39,7 +40,7 @@ function PageSection({
               <TopLine lightTopLine={lightTopLine}>{topLine}</TopLine>
               <Heading lightText={lightText}>{headline}</Heading>
               <Subtitle lightTextDesc={lightTextDesc}>{description}</Subtitle>
-              <Link to="/register">
+              <Link to={linkTo}>
                 <Button big fontBig primary={primary}>
                   {buttonLabel}
                 </Button>

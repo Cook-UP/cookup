@@ -13,7 +13,6 @@ import { Auth } from "aws-amplify";
 class Checkout extends Component {
   constructor(props) {
     super(props);
-    this.mySubmitHandler = this.mySubmitHandler.bind(this);
     this.state = {
       user: "",
     };

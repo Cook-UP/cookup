@@ -11,6 +11,7 @@ import ContactUS from "./pages/ContactUs/ContactUS";
 import RegisterKitchen from "./ChefPages/RegisterKitchen";
 import MenuUpload from "./ChefPages/MenuUpload";
 import DisplayMenu from "./FoodiePages/DisplayMenu";
+import DisplayRestaurant from "./FoodiePages/DisplayRestaurant";
 import S3Upload from "./components/Upload/S3Upload.js";
 import Footer from "./components/Footer";
 import Review from "./pages/Review/Review";
@@ -19,15 +20,13 @@ import Cart from "./components/Cart/Cart";
 import Checkout from "./components/Checkout/Checkout";
 import OrderConfirmation from "./components/Checkout/OrderConfirmation";
 
-
-
 class App extends Component {
   state = {
     userIsAuthenticated: false, // tracks  the authentication state of the webapp
     userIsAuthenticating: true,
     user: null, // holds the user object
-    cart:["Hello"],
-    setCart:[]
+    cart: ["Hello"],
+    setCart: [],
   };
 
   // chages the authentication state  when a user logins and logs out
@@ -58,14 +57,14 @@ class App extends Component {
     this.setState({ isAuthenticating: false });
   }
   render() {
-    const authProps = { // this props will able to be accesssed by every Page of the site
+    const authProps = {
+      // this props will able to be accesssed by every Page of the site
       userIsAuthenticated: this.state.userIsAuthenticated,
       user: this.state.user,
       setAuthStatus: this.setAuthStatus,
       setUser: this.setUser,
       cart: this.state.cart,
-      setCart:[this.state.setCart]
-
+      setCart: [this.state.setCart],
     };
     return (
       // This will checks if the webpage is currently  Authenticating a user and if not uthenticating a user renders page
@@ -157,22 +156,23 @@ class App extends Component {
                 <Route
                   exact
                   path="/Checkout"
-                  render={(props) => (
-                    <Checkout {...props} auth={authProps} />
-                  )}
+                  render={(props) => <Checkout {...props} auth={authProps} />}
                 />
-
-<Route
+                <Route
                   exact
                   path="/OrderConfirmation"
                   render={(props) => (
                     <OrderConfirmation {...props} auth={authProps} />
                   )}
                 />
-              
-              
-              
-                 
+                <Route
+                  exact
+                  path="/DisplayRestaurant"
+                  render={(props) => (
+                    <DisplayRestaurant {...props} auth={authProps} />
+                  )}
+                />
+                
                 {/* <Route exact path="/" component={Home} />   MenuUpload    Nomal way to use react Router */}
               </Switch>
             </div>
