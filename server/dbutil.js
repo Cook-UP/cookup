@@ -35,10 +35,11 @@ const Users = {
 
 
 const Orders = {
-    create: async function (kID, obj) {
+    // create: async function (kID, obj) {
+    create: async function (obj) {
         return new Promise((resolve, reject) => {
             KitchenModel.findOne({
-                kID: kID
+                kID: obj.kID
             }).then(async kitchen => {
                 if (kitchen !== null) {
                     obj['kitchen'] = kitchen;

@@ -4,19 +4,19 @@ const dbutils = require('../dbutil');
 
 
 router.post('/create', async function (req, res, next) {
-	const kID = req.query.kID;
+	// const kID = req.query.kID;
 	const data = req.body;
 
-	if (kID) {
-		await dbutils.Orders.create(kID, data).then(result => {
+	// if (kID) {
+		await dbutils.Orders.create(data).then(result => {
 			res.status(201).send(`New order created: ${JSON.stringify(result)}`);
 		}).catch(error => {
             console.error(error);
 			res.status(500).send(error);
 		});
-	} else {
-        res.status(400).send("No kID specified");
-    }
+	// } else {
+    //     res.status(400).send("No kID specified");
+    // // }
 });
 
 router.get('/getAll', async function(req,res,next) {
