@@ -75,7 +75,7 @@ app.post('/create-checkout-session', async (req, res) => {
     payment_method_types: ['card'],
     line_items: lineItems,  //From cartData
     mode: 'payment',
-    success_url: `${YOUR_DOMAIN}?success=true`,
+    success_url: `${YOUR_DOMAIN}/OrderConfirmation`,
     cancel_url: `${YOUR_DOMAIN}?canceled=true`,
   });
 
