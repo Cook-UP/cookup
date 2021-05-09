@@ -9,7 +9,8 @@ export const RestaurantData1 = [
         name: 'The Amico Chef Restaurant',
         desc:
         'The friendliest Italian Restaurant in Albany',
-        button: 'Order here'
+        button:  'Order here', 
+        linkTo:"/DisplayMenu"
     }
 ];
 export const RestaurantData2 = [

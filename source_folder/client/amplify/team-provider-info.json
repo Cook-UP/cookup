@@ -16,5 +16,23 @@
         "client7567da1d": {}
       }
     }
+  },
+  "devv": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-client-devv-162524-authRole",
+      "UnauthRoleArn": "arn:aws:iam::198996185025:role/amplify-client-devv-162524-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::198996185025:role/amplify-client-devv-162524-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-client-devv-162524-deployment",
+      "UnauthRoleName": "amplify-client-devv-162524-unauthRole",
+      "StackName": "amplify-client-devv-162524",
+      "StackId": "arn:aws:cloudformation:us-east-2:198996185025:stack/amplify-client-devv-162524/85ef1790-b03b-11eb-9cfb-0681800f1aee",
+      "AmplifyAppId": "d3w4sv8otqw3iz"
+    },
+    "categories": {
+      "auth": {
+        "client7567da1d": {}
+      }
+    }
   }
 }

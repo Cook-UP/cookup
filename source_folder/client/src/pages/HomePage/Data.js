@@ -7,7 +7,7 @@ export const homeSectionOne = {
   lightTextDesc: false,
   topLine: "Cookup",
   headline: "Homecooked Meals Delivered To Your Door",
-  buttonLabel: "Get Stated",
+  buttonLabel: "Get Started",
   imgStart: "start",
   img: require("../../images/FoodStock.jpeg").default,
   alt: "Vault",

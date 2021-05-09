@@ -34,4 +34,3 @@ export const loadCurrentItem = (item) => {
     payload: item,
   };
 };
-

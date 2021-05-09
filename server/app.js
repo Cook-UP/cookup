@@ -39,6 +39,50 @@ app.use('/kitchen',kitchenRouter);
 app.use('/orders',ordersRouter);
 app.use('/users', usersRouter);
 
+// stripeData
+const stripe = require('stripe')('sk_test_51IpH4zHPRikjaZV99Dfa0I7xy7jrw5Yvr9TnvEqGLvJX46ycZuYOArmaLxY06soQvo2wuPHrjHVtNkxqVwurBEM400MLxfZTMh');
+
+
+const YOUR_DOMAIN = 'http://localhost:3001';
+
+app.post('/create-checkout-session', async (req, res) => {
+  const cartData = req.body.data; // Post data
+
+  console.log("cart data:");
+  console.log(cartData);
+
+  // console.log("\nparsed:");
+  // console.log(JSON.parse(cartData));
+
+  //Restructure POST data into format accepted by Stripe
+  const lineItems = cartData.map(cartItem => {
+    return {
+      price_data: {
+        currency: 'usd',
+        product_data: {
+          name: cartItem.name,
+          images: [
+            cartItem.imgS3
+          ],
+        },
+        unit_amount: Math.floor(cartItem.price*100)
+      },
+      quantity: cartItem.qty
+    };
+  });
+
+  const session = await stripe.checkout.sessions.create({
+    payment_method_types: ['card'],
+    line_items: lineItems,  //From cartData
+    mode: 'payment',
+    success_url: `${YOUR_DOMAIN}?success=true`,
+    cancel_url: `${YOUR_DOMAIN}?canceled=true`,
+  });
+
+  res.json({ id: session.id });
+});
+
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
 	next(createError(404));
@@ -54,5 +98,9 @@ app.use(function (err, req, res, next) {
 	res.status(err.status || 500);
 	res.render('error');
 });
+
+
+
+
 
 module.exports = app;
