@@ -10,10 +10,10 @@ const orderSchema = new mongoose.Schema({
     // kitchen: Kitchen.schema,    //Owning Kitchen
     kID: String,
     // items: [MenuItem.schema],      //MenuItem
-    items: {
+    items: [{
         name: {type: String, required: true},
         quantity: {type: Number, required: true}
-    },
+    }],
     price: Number,
 }, {
     timestamps: {

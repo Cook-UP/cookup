@@ -37,6 +37,7 @@ const Users = {
 const Orders = {
     // create: async function (kID, obj) {
     create: async function (obj) {
+        console.log(obj);
         return new Promise((resolve, reject) => {
             KitchenModel.findOne({
                 kID: obj.kID
@@ -46,7 +47,7 @@ const Orders = {
                     const order = new OrderModel(obj);
                     await order.save().then(resp => resolve(resp));
                 } else {
-                    reject(`Error: No kitchen found with kID ${kID}`);
+                    reject(`Error: No kitchen found with kID ${obj.kID}`);
                 }
             }).catch(error => {
                 reject(error);
