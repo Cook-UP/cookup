@@ -12,7 +12,6 @@ import RegisterKitchen from "./ChefPages/RegisterKitchen";
 import MenuUpload from "./ChefPages/MenuUpload";
 import DisplayMenu from "./FoodiePages/DisplayMenu";
 import DisplayRestaurant from "./FoodiePages/DisplayRestaurant";
-import S3Upload from "./components/Upload/S3Upload.js";
 import Footer from "./components/Footer";
 import Review from "./pages/Review/Review";
 import ConfrimReview from "./pages/Review/ConfrimReview";
@@ -112,11 +111,7 @@ class App extends Component {
                     <ContactConfirmation {...props} auth={authProps} />
                   )}
                 />
-                <Route
-                  exact
-                  path="/s3"
-                  render={(props) => <S3Upload {...props} auth={authProps} />}
-                />
+
                 <Route
                   exact
                   path="/RegisterKitchen"

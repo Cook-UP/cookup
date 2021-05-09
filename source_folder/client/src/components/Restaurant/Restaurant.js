@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+
 
 import {
   RestaurantContainer,
@@ -12,6 +12,8 @@ import {
   RestaurantItemDesc,
   RestaurantButton
 } from './RestaurantElements';
+
+
 
 const Restaurant = ({ heading, RestaurantData} ) =>   {
 
@@ -35,9 +37,9 @@ const Restaurant = ({ heading, RestaurantData} ) =>   {
 
                  <RestaurantItemDesc>{RestaurantItem.desc}</RestaurantItemDesc>
       
-                 <Link to= "/DisplayMenu">
-                 <RestaurantButton>{RestaurantItem.button}</RestaurantButton>
-                 </Link>
+                
+                 <RestaurantButton onClick={() => window.location= '/DisplayMenu'}>{RestaurantItem.button}</RestaurantButton>
+                
 
                  
                </RestaurantItemInfo>

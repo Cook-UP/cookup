@@ -30,6 +30,7 @@ export const homeSectionTwo = {
   img: require("../../images/CookupLogo.png").default,
   alt: "Credit Card",
   start: "",
+  linkTo:"/RegisterKitchen"
 };
 
 export const homeSectionThree = {
