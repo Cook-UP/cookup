@@ -1,6 +1,6 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 
+//imports elements set up in RestaurantElements.js
 import {
   RestaurantContainer,
   RestaurantWrapper,
@@ -13,6 +13,8 @@ import {
   RestaurantButton
 } from './RestaurantElements';
 
+
+// Set up the look of the restaurant page 
 const Restaurant = ({ heading, RestaurantData} ) =>   {
 
     return (
@@ -35,9 +37,9 @@ const Restaurant = ({ heading, RestaurantData} ) =>   {
 
                  <RestaurantItemDesc>{RestaurantItem.desc}</RestaurantItemDesc>
       
-                 <Link to= "/DisplayMenu">
-                 <RestaurantButton>{RestaurantItem.button}</RestaurantButton>
-                 </Link>
+                
+                 <RestaurantButton onClick={() => window.location= '/DisplayMenu'}>{RestaurantItem.button}</RestaurantButton>
+                
 
                  
                </RestaurantItemInfo>

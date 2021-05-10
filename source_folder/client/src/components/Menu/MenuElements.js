@@ -102,10 +102,10 @@ export const MiniMenuItemCard = styled.div`
 `;
 
 export const MiniMenuItemImg = styled.img`
-  height: 180px;
+  height: 210px;
   border-radius: 25px;
   box-shadow: 8px 8px #d6d6a3;
-  min-width: 300px;
+  min-width: 200px;
   max-width: 100%;
   object-fit: fill;
 `;

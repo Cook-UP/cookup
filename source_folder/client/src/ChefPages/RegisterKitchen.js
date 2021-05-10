@@ -54,24 +54,23 @@ class RegisterKitchen extends Component {
   async mySubmitHandler(e) {
     e.preventDefault();
 
-     // When the webstie is first loaded if the user is logined in this code will
+    // When the webstie is first loaded if the user is logined in this code will
     //run to retrieve the users info from the Mongobd database
-  
-        let Api = "http://3.85.44.54:3000/users/get?uID=";
-        let UserId = this.props.auth.user.attributes.sub; // the UserId saved both Mongodb and amazon cognito
-        let FullApi = Api + UserId; // The working URL for the Api to get the User info from Mongodb
-        console.log("The URL for the Api to get a User by Id is: " + FullApi);
-  
-        var self = this; // this keyword has a different value depending of where it is called so use a diffent var name if you want us in axios
-        axios
-          .get(FullApi)
-          .then(function (response) {
-            self.setState({ UserInfo: response.data }); // All of the User Info from Mongobd saved in state
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
-      
+
+    let Api = "http://3.85.44.54:3000/users/get?uID=";
+    let UserId = this.props.auth.user.attributes.sub; // the UserId saved both Mongodb and amazon cognito
+    let FullApi = Api + UserId; // The working URL for the Api to get the User info from Mongodb
+    console.log("The URL for the Api to get a User by Id is: " + FullApi);
+
+    var self = this; // this keyword has a different value depending of where it is called so use a diffent var name if you want us in axios
+    axios
+      .get(FullApi)
+      .then(function (response) {
+        self.setState({ UserInfo: response.data }); // All of the User Info from Mongobd saved in state
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
 
     console.log(this.state.UserInfo);
     console.log("Before Kitchen");
@@ -148,7 +147,7 @@ class RegisterKitchen extends Component {
                   onChange={this.myChangeHandler}
                 />
 
-                <Button type="submit">Sumbit</Button>
+                <Button type="submit">Submit</Button>
               </StyledForm>
             </StyledFormWrapper>
           </Container>

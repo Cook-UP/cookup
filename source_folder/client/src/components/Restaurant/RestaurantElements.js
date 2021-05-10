@@ -1,5 +1,7 @@
+//styling for webpage 
 import styled from "styled-components";
 
+//Parameters for Restaurant Container
 export const RestaurantContainer = styled.div`
   min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
@@ -7,18 +9,23 @@ export const RestaurantContainer = styled.div`
   background: linear-gradient(to bottom, #0f006e, #d6d6a3);
   color: #f8f8ff; // color of the text on the file
 `;
+
+//Styling for Restaurant Wrapper
 export const RestaurantWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
 `;
+
+//Styling up RestaurantItemCard
 export const RestaurantItemCard = styled.div`
   margin: 0 2rem;
   line-height: 2;
   width: 300px;
 `;
 
+//Styling for RestaurantItemImg 
 export const RestaurantItemImg = styled.img`
   height: 300px;
   border-radius: 25px;
@@ -27,16 +34,20 @@ export const RestaurantItemImg = styled.img`
   max-width: 100%;
 `;
 
+//Styling for Restaurant Heading
 export const RestaurantHeading = styled.h1`
   font-size: clamp(2rem, 2.5vw, 3rem);
   text-align: center;
   margin-bottom: 5rem;
 `;
 
+//Styling for Restaurant Item Name 
 export const RestaurantItemName = styled.h2`
   font-weight: 400;
   font-size: 1.5rem;
 `;
+
+//Stylign for Restaurant Item Info
 export const RestaurantItemInfo = styled.div`
   display: flex;
   flex-direction: column;
@@ -46,10 +57,12 @@ export const RestaurantItemInfo = styled.div`
   text-align: center;
 `;
 
+//Styling for Restaurant Item Desc
 export const RestaurantItemDesc = styled.p`
   margin-bottom: 0.5rem;
 `;
 
+//Styling for Restaurant Button
 export const RestaurantButton = styled.button`
   font-size: 1rem;
   padding: 1rem 4rem;

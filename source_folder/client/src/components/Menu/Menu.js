@@ -6,23 +6,23 @@ import MenuItem from "./MenuItem";
 import {
   MenuContainer,
   MenuWrapper,
-  MenuHeading
-} from '../../components/Menu/MenuElements';
+  MenuHeading,
+} from "../../components/Menu/MenuElements";
 
 const Menu = ({ products }) => {
   return (
     <MenuContainer>
-    <MenuHeading>Menu</MenuHeading>
+      <MenuHeading>Menu</MenuHeading>
       <MenuWrapper>
-      {products.map((product) => (
-        <MenuItem key={product.id} product={product}  heading="Menu"/>
-      ))}
+        {products.map((product) => (
+          <MenuItem key={product.id} product={product} heading="Menu" />
+        ))}
       </MenuWrapper>
     </MenuContainer>
   );
 };
-// Coonects to the Menu compoonent to the global state in Redux 
-// it can only read from state it can put anything in state 
+// Coonects to the Menu compoonent to the global state in Redux
+// it can only read from state it can put anything in state
 const mapStateToProps = (state) => {
   return {
     products: state.shop.products,

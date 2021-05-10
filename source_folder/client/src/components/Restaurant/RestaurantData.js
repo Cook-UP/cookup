@@ -1,7 +1,9 @@
+//import images from image folder
 import ResLogo from '../../images/ResLogo.jpeg';
 import AfricanRestaurant from '../../images/AfricanRestaurant.jpeg'
 import VegetarianRestaurant from '../../images/VegetarianRestaurant.jpeg'
 
+//Information for the Amico Chef Restaurant
 export const RestaurantData1 = [
     {
         img: ResLogo,
@@ -13,6 +15,8 @@ export const RestaurantData1 = [
         linkTo:"/DisplayMenu"
     }
 ];
+
+//Information for the African Restaurant
 export const RestaurantData2 = [
     {
         img: AfricanRestaurant,
@@ -24,6 +28,7 @@ export const RestaurantData2 = [
     }
 ];
 
+//Information for the Vegetarian Restaurant
 export const RestaurantData3 = [
     {
         img: VegetarianRestaurant,

@@ -12,7 +12,7 @@ export const homeSectionOne = {
   img: require("../../images/FoodStock.jpeg").default,
   alt: "Vault",
   start: "true", // start being true determine that the image will appear on the left
-  linkTo:"/DisplayRestaurant"
+  linkTo: "/DisplayRestaurant",
 };
 // For the Second section with a bluebackgground
 export const homeSectionTwo = {
@@ -22,14 +22,14 @@ export const homeSectionTwo = {
   lightText: true,
   lightTextDesc: true,
   topLine: "About Us",
-  headline:
-    "The leading delivery service for home cooked meals Cookup is innovating the industry",
+  headline: "Join the Cookup Crew and start your own in-home restaurant",
   description: "Available on the web and mobile devices",
-  buttonLabel: "Learn More",
+  buttonLabel: "Start Now",
   imgStart: "",
   img: require("../../images/CookupLogo.png").default,
   alt: "Credit Card",
   start: "",
+  linkTo: "/RegisterKitchen",
 };
 
 export const homeSectionThree = {
@@ -38,14 +38,12 @@ export const homeSectionThree = {
   lightTopLine: false,
   lightText: false,
   lightTextDesc: false,
-  headline: "Enjoy All The Flavors Your Nieghborhood Has To Offer And Give Them A Review",
+  headline:
+    "Enjoy All The Flavors Your Nieghborhood Has To Offer And Give Them A Review",
   imgStart: "start",
   img: require("../../images/multicultural_food.jpg").default,
   alt: "Vault",
   start: "true",
   buttonLabel: "Review",
-  linkTo:"/Review"
+  linkTo: "/Review",
 };
-
-
-
