@@ -1,5 +1,4 @@
 
-Run amplify init in the terminal after cloning the Project in the Client Via the terminal
 You should get a prompt like below:
 amplify init
 
@@ -8,9 +7,20 @@ Do you to use an existing environment? (Y/n) Y
 Choose the environment you would like to use: dev
 
 Choose your default editor: Visual Studio Code
+Enter the follwing code to the Run Server:
+cd Server
+npm i    // install all of the dependencies for the server 
+npm start  // start running the server
 
+Enter the follwing code to the Clinet/Front End 
+cd source_folder/client
+npm i    // install all of the dependencies for the front end 
+
+After all the dependencies are installed for the front-end follow  the steps below: 
+Run the following in terminal:
+amplify init 
+Then you will  be prompt with the following,
 Choose the type of app you're building: javascript
-
 What javascript framework you're using: react
 
 Source Directory Path: src
@@ -25,3 +35,5 @@ Do you want to use an AWS Key?
 Enter the Key in the appropriate section	
 Access key ID : AKIAS4VIYZ7ARGTWQWVB
 Secret access key: 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
+
+npm start // start running the front end 
