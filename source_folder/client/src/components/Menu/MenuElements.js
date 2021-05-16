@@ -1,5 +1,4 @@
-
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 export const sharedStyles = css`
   background-color: #eee;
@@ -35,8 +34,6 @@ export const MenuItemCard = styled.div`
   width: 300px;
 `;
 
-
-
 export const MenuItemImg = styled.img`
   height: 300px;
   border-radius: 25px;
@@ -44,8 +41,6 @@ export const MenuItemImg = styled.img`
   min-width: 300px;
   max-width: 100%;
 `;
-
-
 
 export const MenuHeading = styled.h1`
   font-size: clamp(2rem, 2.5vw, 3rem);
@@ -92,10 +87,10 @@ export const MenuButton = styled.button`
   }
 `;
 
-// All of these styleing will be used for the Cart Component 
+// All of these styleing will be used for the Cart Component
 
 export const MiniMenuItemCard = styled.div`
- margin-bottom: 2rem;
+  margin-bottom: 2rem;
   display: flex;
   line-height: 2;
   width: 50px;
@@ -111,7 +106,7 @@ export const MiniMenuItemImg = styled.img`
 `;
 
 export const CartItemInfo = styled.div`
-   padding: 1rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -126,47 +121,40 @@ export const CartItemDesc = styled.p`
 export const CarttemPrice = styled.p`
   margin-bottom: bold;
   font-size: 1rem;
-  `;
+`;
 
-export  const CartItemActions = styled.div`
+export const CartItemActions = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: left;
   padding: 0.6rem;
-
 `;
-export  const CartItemQty = styled.div`
+export const CartItemQty = styled.div`
   display: flex;
   align-items: center;
 `;
-export  const CartDisplay = styled.div`
-width: 20%;
-max-width: 300x;
-padding-left:40px;
-justify-content: space-between;
-padding: 1rem;
-background-color: #fff;
-border-radius: 15px;
-box-sizing: border-box;
-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2); 
-border-radius: 10px;
-
+export const CartDisplay = styled.div`
+  width: 20%;
+  max-width: 300x;
+  padding-left: 40px;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 15px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 `;
-export  const CartDisplayPrice = styled.div`
+export const CartDisplayPrice = styled.div`
   display: flex;
   align-items: center;
-  padding-bottom:1em;
+  padding-bottom: 1em;
 `;
 
 export const CartItemName = styled.h2`
-
   font-size: 1rem;
-  font-weight: bold
+  font-weight: bold;
 `;
- 
 
-
-
-
-
+// console.log(Hello)
