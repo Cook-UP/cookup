@@ -16,7 +16,7 @@ Follow these steps to get started with the Cookup project:
 1. **Clone or Download**: Clone or download the Cookup project repository from [GitHub](https://github.com/yourusername/your-repo.git).
 
     ```bash
-    git clone https://github.com/yourusername/your-repo.git 
+    git clone https://github.com/Cook-UP/cookup 
     ```
 
 2. Navigate to the Server Directory: Change your current directory to the "Server" directory.
